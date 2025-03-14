@@ -1,3 +1,4 @@
+// File: vars/ecr_push.groovy
 def call(String projectName, String imageTag, String awsRegion, String ecrRepositoryUri) {
   // Authenticate with AWS ECR
   sh "aws ecr get-login-password --region ${awsRegion} | docker login --username AWS --password-stdin ${ecrRepositoryUri}"
